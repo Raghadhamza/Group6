@@ -2,9 +2,9 @@
 
 **Architecture specifically the Facade**
 
-**#The claim we are checking is facade transparency. In the report it is stated to be 37%**
+**The claim we are checking is facade transparency. In the report it is stated to be 37%**
 
-**#The report is CES_BLD_24_06_ARC and its on page 5.**
+**The report is CES_BLD_24_06_ARC and its on page 5.**
 
 **Our script**
 ```python
