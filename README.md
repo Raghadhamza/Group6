@@ -6,23 +6,6 @@
 
 **The report is CES_BLD_24_06_ARC and its on page 5.**
 
-**Our script**
-```python
-# BIManalyst group 06
-import ifcopenshell
-from bonsai.bim.ifc import IfcStore
-file = IfcStore.get_file()
-things = file.by_type('IfcWindow')
-print(len(things))
-
-things1 = file.by_type('IfcPlate')
-print("Plate"len(things1))
-
-things2 = file.by_type('IfcCurtainWall')
-print("Curtain walls", len(things2))
-
-```
-
 **The result**
 
 #The script is looking at the length of windows which is zero, meaning windows is labeled elsewhere in the model. Therefore the script looks at Ifcplate to count the number of windows, and ifccurtainwall to count the number of plates. However, upon inspection the windows and plates are sometimes mislabeled, leading to the values being inaccurate.
