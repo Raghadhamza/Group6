@@ -1,0 +1,13 @@
+```python
+# BIManalyst group 06
+import ifcopenshell
+from bonsai.bim.ifc import IfcStore
+file = IfcStore.get_file()
+things = file.by_type('IfcWindow')
+print(len(things))
+
+things1 = file.by_type('IfcPlate')
+print("Plate"len(things1))
+
+things2 = file.by_type('IfcCurtainWall')
+print("Curtain walls", len(things2))
