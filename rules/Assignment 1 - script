@@ -2,31 +2,21 @@
 # BIManalyst group 06
 import ifcopenshell
 from bonsai.bim.ifc import IfcStore
+
+# Get the IFC file
 file = IfcStore.get_file()
 
-Window = file.by_type('IfcWindow')
-print(len(Window))
+# Define the checkRule function
+def checkRule(file):
+    # Indent everything inside this function
+    windows = file.by_type('IfcWindow')
+    print(f"Window count: {len(windows)}")
 
-def checkRule(model):
+    plates = file.by_type('IfcPlate')
+    print(f"Plate count: {len(plates)}")
 
-Window = model.by_type('IfcWindow')
+    curtain_walls = file.by_type('IfcCurtainWall')
+    print(f"Curtain wall count: {len(curtain_walls)}")
 
-result=f"Window: {len(Window)}"
-
-Plate = file.by_type('IfcPlate')
-print("Plate"len(Plate))
-
-def checkRule(model):
-
-Plate = model.by_type('IfcPlate')
-
-result=f"Plate: {len(Plate)}"
-
-CurtainWall = file.by_type('IfcCurtainWall')
-print("Curtain walls", len(CurtainWall))
-
-def checkRule(model):
-
-CurtainWall = model.by_type('IfcCurtainWall')
-
-result=f"CurtainWall: {len(CurtainWall)}"
+# Call the checkRule function
+checkRule(file)
