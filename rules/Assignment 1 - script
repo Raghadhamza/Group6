@@ -3,11 +3,30 @@
 import ifcopenshell
 from bonsai.bim.ifc import IfcStore
 file = IfcStore.get_file()
-things = file.by_type('IfcWindow')
-print(len(things))
 
-things1 = file.by_type('IfcPlate')
-print("Plate"len(things1))
+Window = file.by_type('IfcWindow')
+print(len(Window))
 
-things2 = file.by_type('IfcCurtainWall')
-print("Curtain walls", len(things2))
+def checkRule(model):
+
+Window = model.by_type('IfcWindow')
+
+result=f"Window: {len(Window)}"
+
+Plate = file.by_type('IfcPlate')
+print("Plate"len(Plate))
+
+def checkRule(model):
+
+Plate = model.by_type('IfcPlate')
+
+result=f"Plate: {len(Plate)}"
+
+CurtainWall = file.by_type('IfcCurtainWall')
+print("Curtain walls", len(CurtainWall))
+
+def checkRule(model):
+
+CurtainWall = model.by_type('IfcCurtainWall')
+
+result=f"CurtainWall: {len(CurtainWall)}"
