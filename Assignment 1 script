@@ -1,15 +1,22 @@
 
 ```python
-# BIManalyst group 06
 import ifcopenshell
 from bonsai.bim.ifc import IfcStore
+
+# Get the IFC file
 file = IfcStore.get_file()
-things = file.by_type('IfcWindow')
-print(len(things))
 
-things1 = file.by_type('IfcPlate')
-print("Plate"len(things1))
+# Define the checkRule function
+def checkRule(file):
+    # Indent everything inside this function
+    windows = file.by_type('IfcWindow')
+    print(f"Window count: {len(windows)}")
 
-things2 = file.by_type('IfcCurtainWall')
-print("Curtain walls", len(things2))
+    plates = file.by_type('IfcPlate')
+    print(f"Plate count: {len(plates)}")
 
+    curtain_walls = file.by_type('IfcCurtainWall')
+    print(f"Curtain wall count: {len(curtain_walls)}")
+
+# Call the checkRule function
+checkRule(file)
